@@ -8,5 +8,6 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class GenderVM
 	{
+		public string description { get; set; }
 	}
 }

@@ -34,3 +34,22 @@ C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Se
 C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\refint\PickMeUp.Service.dll
 C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.pdb
 C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\ref\PickMeUp.Service.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Service.deps.json
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Service.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Service.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Core.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.DTO.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Repository.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.DTO.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Repository.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\bin\Debug\net6.0\PickMeUp.Core.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.csproj.AssemblyReference.cache
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.AssemblyInfoInputs.cache
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.AssemblyInfo.cs
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.csproj.CoreCompileInputs.cache
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.csproj.CopyComplete
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\refint\PickMeUp.Service.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\ref\PickMeUp.Service.dll

@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IGenderService : IBaseService<Gender, int>
 	{
 		bool Delete(int id);
-		GenderVM? Add(CarAdd car);
-		GenderVM? Update(CarEdit car);
+		GenderVM? Add(GenderAdd gender);
+		GenderVM? Update(GenderEdit gender);
 	}
 }

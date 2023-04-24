@@ -8,5 +8,13 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class OrderVM
 	{
-	}
+		public string? taxiName { get; set; }
+		public string? userFirstName { get; set; }
+        public string? userLastName { get; set; }
+		public string? driverFirstName { get; set; }
+		public string? driverLastName { get; set; }	
+		public DateTime? timeUntilArrival { get; set; }
+		public string? orderStatusName { get; set; }	
+
+    }
 }

@@ -22,3 +22,15 @@ C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.
 C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\refint\PickMeUp.Core.dll
 C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.pdb
 C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\ref\PickMeUp.Core.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\bin\Debug\net6.0\PickMeUp.Core.deps.json
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\bin\Debug\net6.0\PickMeUp.Core.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\bin\Debug\net6.0\PickMeUp.Core.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.csproj.AssemblyReference.cache
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.AssemblyInfoInputs.cache
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.AssemblyInfo.cs
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.csproj.CoreCompileInputs.cache
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\refint\PickMeUp.Core.dll
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.pdb
+C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\ref\PickMeUp.Core.dll

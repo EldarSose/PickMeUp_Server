@@ -23,19 +23,32 @@ namespace PickMeUp.Service.Services
 			this.genderRepository = genderRepository;
 		}
 
-		public GenderVM? Add(CarAdd car)
+		public GenderVM? Add(GenderAdd gender)
 		{
-			throw new NotImplementedException();
-		}
+            if (string.IsNullOrWhiteSpace(gender.description))
+                return null;
+			genericRepository.Add(new Gender
+			{
+				description=gender.description
+			});
+			return new GenderVM { description=gender.description };
+        }
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return genderRepository.Delete(id);
 		}
 
-		public GenderVM? Update(CarEdit car)
+		public GenderVM? Update(GenderEdit gender)
 		{
-			throw new NotImplementedException();
-		}
+            if (string.IsNullOrWhiteSpace(gender.description))
+                return null;
+			genericRepository.Update(new Gender
+			{
+				genderId = gender.genderId,
+				description = gender.description
+			});
+            return new GenderVM { description = gender.description };
+        }
 	}
 }

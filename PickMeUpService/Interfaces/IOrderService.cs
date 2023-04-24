@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IOrderService : IBaseService<Order, int>
 	{
 		bool Delete(int id);
-		OrderVM? Add(CarAdd car);
-		OrderVM? Update(CarEdit car);
+		OrderVM? Add(OrderAdd order);
+		OrderVM? Update(OrderEdit order);
 	}
 }

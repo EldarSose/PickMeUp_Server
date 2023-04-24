@@ -8,5 +8,9 @@ namespace PickMeUp.DTO.EditModel
 {
 	public class OrderEdit
 	{
-	}
+		public int orderId { get; set; }
+        public int taxiDriverId { get; set; }
+        public int orderStatusId { get; set; }
+        public DateTime? timeUntilArrival { get; set; }
+    }
 }

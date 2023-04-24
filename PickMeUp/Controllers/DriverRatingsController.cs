@@ -7,11 +7,13 @@ using PickMeUp.Service.Services;
 
 namespace PickMeUp.API.Controllers
 {
-	public class DriverRatings : Controller
+    [ApiController]
+    [Route("[controller]/[action]")]
+    public class DriverRatingsController : Controller
 	{
 		private readonly IDriverRatingsService driverRatingsService;
 
-		public DriverRatings(IDriverRatingsService driverRatingsService)
+		public DriverRatingsController(IDriverRatingsService driverRatingsService)
 		{
 			this.driverRatingsService = driverRatingsService;
 		}

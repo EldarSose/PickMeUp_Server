@@ -8,5 +8,8 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class OrderAdd
 	{
+		public int taxiId { get; set; }
+		public int userId { get; set; }
+		
 	}
 }

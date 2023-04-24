@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3xvqEbw0ue3+lRpeAvPTnmwVurIOPNnb0f6BaUhVIo5uBTTnnmOjFTaWRrjzLx2R0a1YNCtN1DcU0cYy9MNPSQ==",
+  "dgSpecHash": "SRfGhdYPC49/uSCDkZXQu6CR0UHF9Sh7CDi+ecFUNudz6ex1grgm5o9dtE8Le7XdLzbT7gpk0Amro0Xxa+76Lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
+  "projectFilePath": "C:\\develop\\PickMeUp RS2\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
