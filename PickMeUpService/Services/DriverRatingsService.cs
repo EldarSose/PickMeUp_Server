@@ -36,6 +36,7 @@ namespace PickMeUp.Service.Services
 				rating = ratings.rating,
 				comment = ratings.comment,
 				driverId = ratings.driverId,
+				isDeleted = false
 			});
 
 			var driver = userRepository.GetById(ratings.driverId);
@@ -63,11 +64,12 @@ namespace PickMeUp.Service.Services
 				return null;
 			genericRepository.Update(new DriverRatings
 			{
-				driverRatingsId= ratings.driverRatingsId,
+				driverRatingsId = ratings.driverRatingsId,
 				userId = ratings.userId,
 				rating = ratings.rating,
 				comment = ratings.comment,
 				driverId = ratings.driverId,
+				isDeleted = false
 			});
 
 			var driver = userRepository.GetById(ratings.driverId);

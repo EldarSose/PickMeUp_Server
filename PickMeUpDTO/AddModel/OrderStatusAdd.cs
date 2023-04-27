@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class OrderStatusAdd
 	{
+		public string? orderStatusName { get; set; }
+		public string? orderStatusDescription { get; set; }
 	}
 }

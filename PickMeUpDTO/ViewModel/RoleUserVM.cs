@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class RoleUserVM
 	{
+		public string? roleName { get; set; }
+
 	}
 }

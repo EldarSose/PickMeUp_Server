@@ -8,5 +8,8 @@ namespace PickMeUp.DTO.EditModel
 {
 	public class ReviewsEdit
 	{
+		public int reviewId { get; set; }
+		public string? comment { get; set; }
+		public float? rating { get; set; }
 	}
 }

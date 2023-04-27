@@ -19,16 +19,19 @@ namespace PickMeUp.Service.Services
 		private readonly IOrderRepository orderRepository;
         private readonly ITaxiRepository taxiRepository;
         private readonly IUserRepository userRepository;
+		private readonly IOrderStatusRepository orderStatusRepository;
 
-        public OrderService(IGenericRepository<Order, int> genericRepository,
+		public OrderService(IGenericRepository<Order, int> genericRepository,
 			IOrderRepository orderRepository,
 			ITaxiRepository taxiRepository,
-			IUserRepository userRepository) : base(genericRepository)
+			IUserRepository userRepository,
+			IOrderStatusRepository orderStatusRepository) : base(genericRepository)
 		{
 			this.orderRepository = orderRepository;
             this.taxiRepository = taxiRepository;
             this.userRepository = userRepository;
-        }
+			this.orderStatusRepository = orderStatusRepository;
+		}
 
 		public OrderVM? Add(OrderAdd order)
 		{
@@ -37,7 +40,8 @@ namespace PickMeUp.Service.Services
 			genericRepository.Add(new Order
 			{
 				taxiId=order.taxiId,
-				userId=order.userId
+				userId=order.userId,
+				isDeleted = false
 			});
 			
 			Taxi taxi = taxiRepository.GetById(order.taxiId);
@@ -65,28 +69,45 @@ namespace PickMeUp.Service.Services
 				orderId = order.orderId,
 				orderStatusId = order.orderStatusId,
 				taxiDriverId = order.taxiDriverId,
-				timeUntilArrival = order.timeUntilArrival
+				timeUntilArrival = order.timeUntilArrival,
+				isDeleted = false
 			});
 
 			Order order1 = orderRepository.GetById(order.orderId);
+			Taxi taxi = new Taxi();
+			User user = new User();
+			User taxiDriver = new User();
+			OrderStatus status = new OrderStatus();
+			if (order1 != null)
+			{
+				if (order1.taxiId != null)
+				{
+					taxi = taxiRepository.GetById((int)order1.taxiId);
+				}
+				if (order1.userId != null)
+				{
+					user = userRepository.GetById((int)order1.userId);
+				}
+				if (order1.taxiDriverId != null)
+				{
+					taxiDriver = userRepository.GetById((int)order1.taxiDriverId);
+				}
+				if (order1.orderStatusId != null)
+				{
+					status = orderStatusRepository.GetById((int)order1.orderStatusId);
+				}
+			}
 
-			//if (order1 != null)
-			//{
-			//	if(order1.taxiId != null)
-			//	{
-			//		Taxi taxi = taxiRepository.GetById(order1.taxiId);
-			//	}
-			//	User user = userRepository.GetById(order1.userId);
-
-			//}
-
-			//         return new OrderVM
-			//         {
-			//             taxiName = taxi.taxiName,
-			//             userFirstName = user.firstName,
-			//             userLastName = user.lastName
-			//         };
-			return new OrderVM { };
+			return new OrderVM
+			{
+				taxiName = taxi.taxiName,
+				userFirstName = user.firstName,
+				userLastName = user.lastName,
+				driverFirstName = taxiDriver.firstName,
+				driverLastName = taxiDriver.lastName,
+				timeUntilArrival = order1.timeUntilArrival,
+				orderStatusName = status.orderStatusName
+			};
         }
 	}
 }

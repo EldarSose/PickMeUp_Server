@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class RoleUserAdd
 	{
+		public int? userId { get; set; }
+		public int? roleId { get; set; }
 	}
 }

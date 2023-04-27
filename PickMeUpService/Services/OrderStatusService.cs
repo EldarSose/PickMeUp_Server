@@ -23,19 +23,44 @@ namespace PickMeUp.Service.Services
 			this.orderStatusRepository = orderStatusRepository;
 		}
 
-		public OrderStatusVM? Add(CarAdd car)
+		public OrderStatusVM? Add(OrderStatusAdd orderStatus)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(orderStatus.orderStatusName) || string.IsNullOrWhiteSpace(orderStatus.orderStatusDescription))
+				return null;
+			genericRepository.Add(new OrderStatus
+			{
+				orderStatusName= orderStatus.orderStatusName,
+				orderStatusDescription= orderStatus.orderStatusDescription
+			});
+
+			return new OrderStatusVM
+			{
+				orderStatusName= orderStatus.orderStatusName,
+				orderStatusDescription= orderStatus.orderStatusDescription
+			};
 		}
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return orderStatusRepository.Delete(id);
 		}
 
-		public OrderStatusVM? Update(CarEdit car)
+		public OrderStatusVM? Update(OrderStatusEdit orderStatus)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(orderStatus.orderStatusName) || string.IsNullOrWhiteSpace(orderStatus.orderStatusDescription))
+				return null;
+			genericRepository.Update(new OrderStatus
+			{
+				ordedStatusId = orderStatus.ordedStatusId,
+				orderStatusName = orderStatus.orderStatusName,
+				orderStatusDescription = orderStatus.orderStatusDescription
+			});
+
+			return new OrderStatusVM
+			{
+				orderStatusName = orderStatus.orderStatusName,
+				orderStatusDescription = orderStatus.orderStatusDescription
+			};
 		}
 	}
 }

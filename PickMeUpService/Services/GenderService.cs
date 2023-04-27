@@ -29,7 +29,8 @@ namespace PickMeUp.Service.Services
                 return null;
 			genericRepository.Add(new Gender
 			{
-				description=gender.description
+				description=gender.description,
+				isDeleted = false
 			});
 			return new GenderVM { description=gender.description };
         }
@@ -46,7 +47,8 @@ namespace PickMeUp.Service.Services
 			genericRepository.Update(new Gender
 			{
 				genderId = gender.genderId,
-				description = gender.description
+				description = gender.description,
+				isDeleted = false
 			});
             return new GenderVM { description = gender.description };
         }

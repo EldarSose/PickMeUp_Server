@@ -8,5 +8,6 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class ReportTypeAdd
 	{
+		public int? reportName { get; set; }
 	}
 }

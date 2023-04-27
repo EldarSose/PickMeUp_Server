@@ -16,16 +16,41 @@ namespace PickMeUp.Service.Services
 	public class ReportService : BaseService<Report, int>, IReportService
 	{
 		private readonly IReportRepository reportRepository;
+		private readonly IUserRepository userRepository;
 
 		public ReportService(IGenericRepository<Report, int> genericRepository,
-			IReportRepository reportRepository) : base(genericRepository)
+			IReportRepository reportRepository,
+			IUserRepository userRepository) : base(genericRepository)
 		{
 			this.reportRepository = reportRepository;
+			this.userRepository = userRepository;
 		}
 
-		public ReportVM? Add(CarAdd car)
+		public ReportVM? Add(ReportAdd report)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(report.reportName) || string.IsNullOrWhiteSpace(report.reportDescription) || 
+				report.reportTypeId == null || report.userId == null)
+				return null;
+
+			genericRepository.Add(new Report
+			{
+				reportName = report.reportName,
+				reportDescription = report.reportDescription,
+				reportTypeId = report.reportTypeId,
+				userId = report.userId,
+				isDeleted = false
+			});
+
+			User user = userRepository.GetById((int)report.userId);
+
+			return new ReportVM
+			{
+				reportName = report.reportName,
+				reportDescription = report.reportDescription,
+				userFirstName = user.firstName,
+				userLastName = user.lastName,
+				madeAt = report.madeAt
+			};
 		}
 
 		public bool Delete(int id)
@@ -33,9 +58,29 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public ReportVM? Update(CarEdit car)
+		public ReportVM? Update(ReportEdit report)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(report.reportName) || string.IsNullOrWhiteSpace(report.reportDescription))
+				return null;
+
+			genericRepository.Update(new Report
+			{
+				reportId = report.reportId,
+				reportName = report.reportName,
+				reportDescription = report.reportDescription,
+			});
+
+			Report report1 = reportRepository.GetById(report.reportId);
+			User user = userRepository.GetById((int)report1.userId);
+
+			return new ReportVM
+			{
+				reportName = report1.reportName,
+				reportDescription = report1.reportDescription,
+				userFirstName = user.firstName,
+				userLastName = user.lastName,
+				madeAt = report1.madeAt
+			};
 		}
 	}
 }

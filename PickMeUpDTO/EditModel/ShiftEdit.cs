@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.EditModel
 {
 	public class ShiftEdit
 	{
+		public int shiftId { get; set; }
+		public bool? tookABreak { get; set; }
 	}
 }

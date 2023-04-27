@@ -8,5 +8,10 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class ReviewsVM
 	{
+		public string? taxiName { get; set; }
+		public string? userFirstName { get; set; }
+		public string? userLastName { get; set; }
+		public string? comment { get; set; }
+		public float? rating { get; set; }
 	}
 }

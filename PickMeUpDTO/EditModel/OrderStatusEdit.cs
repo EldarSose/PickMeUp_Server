@@ -8,5 +8,8 @@ namespace PickMeUp.DTO.EditModel
 {
 	public class OrderStatusEdit
 	{
+		public int ordedStatusId { get; set; }
+		public string? orderStatusName { get; set; }
+		public string? orderStatusDescription { get; set; }
 	}
 }

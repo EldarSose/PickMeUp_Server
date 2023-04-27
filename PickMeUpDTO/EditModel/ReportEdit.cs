@@ -8,5 +8,8 @@ namespace PickMeUp.DTO.EditModel
 {
 	public class ReportEdit
 	{
+		public int reportId { get; set; }
+		public string? reportName { get; set; }
+		public string? reportDescription { get; set; }
 	}
 }

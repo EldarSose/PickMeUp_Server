@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IReportService : IBaseService<Report, int>
 	{
 		bool Delete(int id);
-		ReportVM? Add(CarAdd car);
-		ReportVM? Update(CarEdit car);
+		ReportVM? Add(ReportAdd report);
+		ReportVM? Update(ReportEdit report);
 	}
 }

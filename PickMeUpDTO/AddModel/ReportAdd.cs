@@ -8,5 +8,11 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class ReportAdd
 	{
+		public string? reportName { get; set; }
+		public string? reportDescription { get; set; }
+		public DateTime? madeAt { get; set; }
+		public int? reportTypeId { get; set; }
+		public int? userId { get; set; }
+
 	}
 }

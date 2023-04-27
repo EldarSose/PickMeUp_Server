@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class RolesAdd
 	{
+		public string? roleName { get; set; }
+		public string? roleDescription { get; set; }
 	}
 }
