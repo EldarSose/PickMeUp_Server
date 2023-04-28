@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class UserAccountAdd
 	{
+		public string? email { get; set; }
+		public string? password { get; set; }
 	}
 }

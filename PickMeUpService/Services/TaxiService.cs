@@ -23,7 +23,7 @@ namespace PickMeUp.Service.Services
 			this.taxiRepository = taxiRepository;
 		}
 
-		public TaxiVM? Add(CarAdd car)
+		public TaxiVM? Add(TaxiAdd taxi)
 		{
 			throw new NotImplementedException();
 		}
@@ -33,7 +33,7 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public TaxiVM? Update(CarEdit car)
+		public TaxiVM? Update(TaxiEdit taxi)
 		{
 			throw new NotImplementedException();
 		}

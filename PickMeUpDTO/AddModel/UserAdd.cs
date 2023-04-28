@@ -8,5 +8,12 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class UserAdd
 	{
+		public string? firstName { get; set; }
+		public string? lastName { get; set; }
+		public int? userAccountID { get; set; }
+		public DateTime? dateOfBirth { get; set; }
+		public int? genderID { get; set; }
+		public string? phoneNumber { get; set; }
+		public int? taxiCompanyID { get; set; }
 	}
 }

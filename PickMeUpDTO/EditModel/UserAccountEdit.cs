@@ -8,5 +8,6 @@ namespace PickMeUp.DTO.EditModel
 {
 	public class UserAccountEdit
 	{
+		public string? userName { get; set; }
 	}
 }

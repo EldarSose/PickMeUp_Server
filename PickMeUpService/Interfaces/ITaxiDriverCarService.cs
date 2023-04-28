@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface ITaxiDriverCarService : IBaseService<TaxiDriverCar, int>
 	{
 		bool Delete(int id);
-		TaxiDriverCarVM? Add(CarAdd car);
-		TaxiDriverCarVM? Update(CarEdit car);
+		TaxiDriverCarVM? Add(TaxiDriverCarAdd taxiDriverCar);
+		TaxiDriverCarVM? Update(TaxiDriverCarEdit taxiDriverCar);
 	}
 }

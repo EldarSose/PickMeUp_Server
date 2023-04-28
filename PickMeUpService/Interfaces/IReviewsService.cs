@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IReviewsService : IBaseService<Reviews, int>
 	{
 		bool Delete(int id);
-		ReviewsVM? Add(CarAdd car);
-		ReviewsVM? Update(CarEdit car);
+		ReviewsVM? Add(ReviewsAdd review);
+		ReviewsVM? Update(ReviewsEdit review);
 	}
 }

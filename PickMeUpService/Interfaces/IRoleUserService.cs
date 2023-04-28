@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IRoleUserService : IBaseService<RoleUser, int>
 	{
 		bool Delete(int id);
-		RoleUserVM? Add(CarAdd car);
-		RoleUserVM? Update(CarEdit car);
+		RoleUserVM? Add(RoleUserAdd roleUser);
+		RoleUserVM? Update(RoleUserEdit roleUser);
 	}
 }

@@ -23,7 +23,7 @@ namespace PickMeUp.Service.Services
 			this.shiftRepository = shiftRepository;
 		}
 
-		public ShiftVM? Add(CarAdd car)
+		public ShiftVM? Add(ShiftAdd shift)
 		{
 			throw new NotImplementedException();
 		}
@@ -33,7 +33,7 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public ShiftVM? Update(CarEdit car)
+		public ShiftVM? Update(ShiftEdit shift)
 		{
 			throw new NotImplementedException();
 		}

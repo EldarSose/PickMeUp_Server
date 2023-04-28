@@ -23,7 +23,7 @@ namespace PickMeUp.Service.Services
 			this.rolesRepository = rolesRepository;
 		}
 
-		public RolesVM? Add(CarAdd car)
+		public RolesVM? Add(RolesAdd role)
 		{
 			throw new NotImplementedException();
 		}
@@ -33,7 +33,7 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public RolesVM? Update(CarEdit car)
+		public RolesVM? Update(RolesEdit role)
 		{
 			throw new NotImplementedException();
 		}

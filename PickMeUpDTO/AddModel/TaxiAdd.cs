@@ -8,5 +8,10 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class TaxiAdd
 	{
+		public string? taxiName { get; set; }
+		public int? userId { get; set; }
+		public float? startingPrice { get; set; }
+		public float? pricePerKilometer { get; set; }
+		public string? address { get; set; }
 	}
 }

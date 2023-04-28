@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IUserAccountService : IBaseService<UserAccount, int>
 	{
 		bool Delete(int id);
-		UserAccountVM? Add(CarAdd car);
-		UserAccountVM? Update(CarEdit car);
+		UserAccountVM? Add(UserAccountAdd userAccount);
+		UserAccountVM? Update(UserAccountEdit userAccount);
 	}
 }

@@ -23,7 +23,7 @@ namespace PickMeUp.Service.Services
 			this.reviewsRepository = reviewsRepository;
 		}
 
-		public ReviewsVM? Add(CarAdd car)
+		public ReviewsVM? Add(ReviewsAdd review)
 		{
 			throw new NotImplementedException();
 		}
@@ -33,7 +33,7 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public ReviewsVM? Update(CarEdit car)
+		public ReviewsVM? Update(ReviewsEdit review)
 		{
 			throw new NotImplementedException();
 		}

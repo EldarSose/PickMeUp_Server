@@ -13,7 +13,7 @@ namespace PickMeUp.Service.Interfaces
 	public interface IShiftService : IBaseService<Shift, int>
 	{
 		bool Delete(int id);
-		ShiftVM? Add(CarAdd car);
-		ShiftVM? Update(CarEdit car);
+		ShiftVM? Add(ShiftAdd shift);
+		ShiftVM? Update(ShiftEdit shift);
 	}
 }

@@ -23,7 +23,7 @@ namespace PickMeUp.Service.Services
 			this.reportTypeRepository = reportTypeRepository;
 		}
 
-		public ReportTypeVM? Add(CarAdd car)
+		public ReportTypeVM? Add(ReportTypeAdd reportType)
 		{
 			throw new NotImplementedException();
 		}
@@ -33,7 +33,7 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public ReportTypeVM? Update(CarEdit car)
+		public ReportTypeVM? Update(ReportTypeEdit reportType)
 		{
 			throw new NotImplementedException();
 		}

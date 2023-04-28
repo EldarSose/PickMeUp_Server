@@ -8,5 +8,7 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class TaxiContactAdd
 	{
+		public int? taxiId { get; set; }
+		public int? contactId { get; set; }
 	}
 }

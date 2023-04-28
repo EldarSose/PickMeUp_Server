@@ -23,7 +23,7 @@ namespace PickMeUp.Service.Services
 			this.userRepository = userRepository;
 		}
 
-		public UserVM? Add(CarAdd car)
+		public UserVM? Add(UserAdd user)
 		{
 			throw new NotImplementedException();
 		}
@@ -33,7 +33,7 @@ namespace PickMeUp.Service.Services
 			throw new NotImplementedException();
 		}
 
-		public UserVM? Update(CarEdit car)
+		public UserVM? Update(UserEdit user)
 		{
 			throw new NotImplementedException();
 		}
