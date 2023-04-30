@@ -16,26 +16,96 @@ namespace PickMeUp.Service.Services
 	public class UserService : BaseService<User, int>, IUserService
 	{
 		private readonly IUserRepository userRepository;
+		private readonly ITaxiRepository taxiRepository;
+private readonly IGenderRepository genderRepository;
+		private readonly IUserAccountRepository userAccountRepository;
 
 		public UserService(IGenericRepository<User, int> genericRepository,
-			IUserRepository userRepository) : base(genericRepository)
+			IUserRepository userRepository,
+			ITaxiRepository taxiRepository,
+			IGenderRepository genderRepository, 
+			IUserAccountRepository userAccountRepository) : base(genericRepository)
 		{
 			this.userRepository = userRepository;
+			this.taxiRepository = taxiRepository;
+			this.genderRepository = genderRepository;
+			this.userAccountRepository = userAccountRepository;
 		}
 
 		public UserVM? Add(UserAdd user)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(user.firstName) || string.IsNullOrWhiteSpace(user.lastName) ||
+				user.dateOfBirth == null || user.userAccountID == null || user.genderID == null || 
+				string.IsNullOrWhiteSpace(user.phoneNumber))
+				return null;
+
+			genericRepository.Add(new User
+			{
+				firstName = user.firstName,
+				lastName = user.lastName,
+				dateOfBirth = user.dateOfBirth,
+				userAccountID = user.userAccountID,
+				taxiCompanyID = user.taxiCompanyID,
+				phoneNumber= user.phoneNumber,
+				genderID = user.genderID,
+			});
+			Taxi taxi = new Taxi();
+
+			if(user.taxiCompanyID != null)
+				taxi = taxiRepository.GetById((int)user.taxiCompanyID);
+
+			Gender gender = genderRepository.GetById((int)user.genderID);
+			UserAccount userAccount = userAccountRepository.GetById((int)user.userAccountID);
+
+			return new UserVM
+			{
+				firstName = user.firstName,
+				lastName = user.lastName,
+				dateOfBirth = user.dateOfBirth,
+				taxiName = taxi.taxiName,
+				gender = gender.description,
+				userName = userAccount.email,
+				phoneNumber = user.phoneNumber
+			};
 		}
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return userRepository.Delete(id);
 		}
 
 		public UserVM? Update(UserEdit user)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(user.firstName) || string.IsNullOrWhiteSpace(user.lastName) ||
+				string.IsNullOrWhiteSpace(user.phoneNumber))
+				return null;
+
+			genericRepository.Update(new User
+			{
+				userId = user.userId,
+				firstName = user.firstName,
+				lastName = user.lastName,
+				phoneNumber = user.phoneNumber,
+			});
+			User user1 = userRepository.GetById(user.userId);
+			Taxi taxi = new Taxi();
+
+			if (user1.taxiCompanyID != null)
+				taxi = taxiRepository.GetById((int)user1.taxiCompanyID);
+
+			Gender gender = genderRepository.GetById((int)user1.genderID);
+			UserAccount userAccount = userAccountRepository.GetById((int)user1.userAccountID);
+
+			return new UserVM
+			{
+				firstName = user1.firstName,
+				lastName = user1.lastName,
+				dateOfBirth = user1.dateOfBirth,
+				taxiName = taxi.taxiName,
+				gender = gender.description,
+				userName = userAccount.email,
+				phoneNumber = user1.phoneNumber
+			};
 		}
 	}
 }

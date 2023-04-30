@@ -30,7 +30,7 @@ namespace PickMeUp.Service.Services
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return taxiDriverCarRepository.Delete(id);
 		}
 
 		public TaxiDriverCarVM? Update(TaxiDriverCarEdit taxiDriverCar)

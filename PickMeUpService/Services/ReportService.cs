@@ -55,7 +55,7 @@ namespace PickMeUp.Service.Services
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return reportRepository.Delete(id);
 		}
 
 		public ReportVM? Update(ReportEdit report)

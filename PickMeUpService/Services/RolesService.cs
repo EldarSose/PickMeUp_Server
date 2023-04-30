@@ -30,7 +30,7 @@ namespace PickMeUp.Service.Services
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return rolesRepository.Delete(id);
 		}
 
 		public RolesVM? Update(RolesEdit role)

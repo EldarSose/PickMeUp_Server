@@ -30,7 +30,7 @@ namespace PickMeUp.Service.Services
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return reviewsRepository.Delete(id);
 		}
 
 		public ReviewsVM? Update(ReviewsEdit review)

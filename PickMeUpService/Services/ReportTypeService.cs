@@ -4,6 +4,7 @@ using PickMeUp.DTO.EditModel;
 using PickMeUp.DTO.ViewModel;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
+using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace PickMeUp.Service.Services
 
 		public bool Delete(int id)
 		{
-			throw new NotImplementedException();
+			return reportTypeRepository.Delete(id);
 		}
 
 		public ReportTypeVM? Update(ReportTypeEdit reportType)
