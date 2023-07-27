@@ -16,16 +16,44 @@ namespace PickMeUp.Service.Services
 	public class ReviewsService : BaseService<Reviews, int>, IReviewsService
 	{
 		private readonly IReviewsRepository reviewsRepository;
+		private readonly IUserRepository userRepository;
+		private readonly ITaxiRepository taxiRepository;
 
 		public ReviewsService(IGenericRepository<Reviews, int> genericRepository,
-			IReviewsRepository reviewsRepository) : base(genericRepository)
+			IReviewsRepository reviewsRepository,
+			IUserRepository userRepository,
+			ITaxiRepository taxiRepository) : base(genericRepository)
 		{
 			this.reviewsRepository = reviewsRepository;
+			this.userRepository = userRepository;
+			this.taxiRepository = taxiRepository;
 		}
 
 		public ReviewsVM? Add(ReviewsAdd review)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(review.comment) || review.rating == null)
+				return null;
+
+			genericRepository.Add(new Reviews
+			{
+				taxiId = review.taxiId,
+				userId = review.userId,
+				comment = review.comment,
+				rating = review.rating,
+				isDeleted = false
+			});
+
+			Taxi taxi = taxiRepository.GetById(review.taxiId);
+			User user = userRepository.GetById(review.userId);
+
+			return new ReviewsVM
+			{
+				taxiName = taxi.taxiName,
+				userFirstName= user.firstName,
+				userLastName= user.lastName,
+				comment= review.comment,
+				rating = review.rating,
+			};
 		}
 
 		public bool Delete(int id)
@@ -35,7 +63,32 @@ namespace PickMeUp.Service.Services
 
 		public ReviewsVM? Update(ReviewsEdit review)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(review.comment) || review.rating == null)
+				return null;
+
+			genericRepository.Update(new Reviews
+			{
+				reviewId = review.reviewId,
+				comment = review.comment,
+				rating = review.rating,
+			});
+			Taxi taxi = new Taxi();
+			Reviews rev = reviewsRepository.GetById(review.reviewId);
+			if(rev.taxiId.HasValue)
+				taxi = taxiRepository.GetById(rev.taxiId.Value);
+
+			User user = new User();
+			if(rev.userId.HasValue)
+				user = userRepository.GetById(rev.userId.Value);
+
+			return new ReviewsVM
+			{
+				taxiName = taxi.taxiName,
+				userFirstName = user.firstName,
+				userLastName = user.lastName,
+				comment = review.comment,
+				rating = review.rating,
+			};
 		}
 	}
 }

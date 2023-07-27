@@ -9,6 +9,6 @@ namespace PickMeUp.DTO.EditModel
 	public class ReportTypeEdit
 	{
 		public int reportTypeId { get; set; }
-		public int? reportName { get; set; }
+		public string? reportName { get; set; }
 	}
 }

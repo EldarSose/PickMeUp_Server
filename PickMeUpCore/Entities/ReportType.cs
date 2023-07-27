@@ -11,7 +11,7 @@ namespace PickMeUp.Core.Entities
 	{
 		[Key]
 		public int reportTypeId { get; set; }
-		public int? reportName { get; set; }
+		public string? reportName { get; set; }
 		public bool? isDeleted { get; set; }
 	}
 }

@@ -26,7 +26,19 @@ namespace PickMeUp.Service.Services
 
 		public ReportTypeVM? Add(ReportTypeAdd reportType)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(reportType.reportName))
+				return null;
+
+			genericRepository.Add(new ReportType
+			{
+				reportName = reportType.reportName,
+				isDeleted = false
+			});
+
+			return new ReportTypeVM
+			{
+				reportName = reportType.reportName
+			};
 		}
 
 		public bool Delete(int id)
@@ -36,7 +48,19 @@ namespace PickMeUp.Service.Services
 
 		public ReportTypeVM? Update(ReportTypeEdit reportType)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(reportType.reportName))
+				return null;
+
+			genericRepository.Update(new ReportType
+			{
+				reportTypeId = reportType.reportTypeId,
+				reportName = reportType.reportName,
+			});
+
+			return new ReportTypeVM
+			{
+				reportName = reportType.reportName
+			};
 		}
 	}
 }

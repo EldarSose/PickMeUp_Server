@@ -8,6 +8,6 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class ReportTypeVM
 	{
-		public int? reportName { get; set; }
+		public string? reportName { get; set; }
 	}
 }

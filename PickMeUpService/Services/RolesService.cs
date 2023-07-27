@@ -4,6 +4,7 @@ using PickMeUp.DTO.EditModel;
 using PickMeUp.DTO.ViewModel;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
+using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,22 @@ namespace PickMeUp.Service.Services
 
 		public RolesVM? Add(RolesAdd role)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(role.roleName) || string.IsNullOrWhiteSpace(role.roleDescription))
+				return null;
+
+			genericRepository.Add(new Roles
+			{
+				roleName = role.roleName,
+				roleDescription = role.roleDescription,
+				isDeleted = false
+			});
+
+
+			return new RolesVM
+			{
+				roleName= role.roleName,
+				roleDescription= role.roleDescription,
+			};
 		}
 
 		public bool Delete(int id)
@@ -35,7 +51,23 @@ namespace PickMeUp.Service.Services
 
 		public RolesVM? Update(RolesEdit role)
 		{
-			throw new NotImplementedException();
+			if (string.IsNullOrWhiteSpace(role.roleName) || string.IsNullOrWhiteSpace(role.roleDescription))
+				return null;
+
+			genericRepository.Update(new Roles
+			{
+				roleId= role.roleId,
+				roleName = role.roleName,
+				roleDescription = role.roleDescription,
+				isDeleted = false
+			});
+
+
+			return new RolesVM
+			{
+				roleName = role.roleName,
+				roleDescription = role.roleDescription,
+			};
 		}
 	}
 }
