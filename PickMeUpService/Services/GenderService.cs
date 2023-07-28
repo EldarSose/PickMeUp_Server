@@ -44,12 +44,13 @@ namespace PickMeUp.Service.Services
 		{
             if (string.IsNullOrWhiteSpace(gender.description))
                 return null;
-			genericRepository.Update(new Gender
-			{
-				genderId = gender.genderId,
-				description = gender.description,
-				isDeleted = false
-			});
+
+			Gender g = genderRepository.GetById(gender.genderId);
+
+			if(g == null) return null;
+
+			g.description = gender.description;
+			genericRepository.Update(g);
             return new GenderVM { description = gender.description };
         }
 	}

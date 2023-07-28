@@ -62,9 +62,9 @@ namespace PickMeUp.API.Controllers
 				return Ok(userAccountVM);
 		}
 		[HttpDelete]
-		public ActionResult Delete(int gender)
+		public ActionResult Delete(int userAccId)
 		{
-			var deleted = userAccountService.Delete(gender);
+			var deleted = userAccountService.Delete(userAccId);
 			if (deleted == false)
 				return BadRequest();
 			else

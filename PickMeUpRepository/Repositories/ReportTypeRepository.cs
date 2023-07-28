@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (ReportTypes != null)
 			{
 				ReportTypes.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

@@ -51,13 +51,13 @@ namespace PickMeUp.Service.Services
 		{
 			if (string.IsNullOrWhiteSpace(contact.contactInfo) || string.IsNullOrWhiteSpace(contact.contactName))
 				return null;
-			genericRepository.Update(new Contact
-			{
-				contactId = contact.contactId,
-				contactName = contact.contactName,
-				contactInfo = contact.contactInfo,
-				isDeleted = false
-			});
+			Contact c = contactRepository.GetById(contact.contactId);
+
+			if (c == null) return null;
+
+			c.contactName = contact.contactName;
+			c.contactInfo = contact.contactInfo;
+			genericRepository.Update(c);
 
 			return new ContactVM
 			{

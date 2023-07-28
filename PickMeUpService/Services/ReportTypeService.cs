@@ -51,11 +51,13 @@ namespace PickMeUp.Service.Services
 			if (string.IsNullOrWhiteSpace(reportType.reportName))
 				return null;
 
-			genericRepository.Update(new ReportType
-			{
-				reportTypeId = reportType.reportTypeId,
-				reportName = reportType.reportName,
-			});
+			ReportType rt = reportTypeRepository.GetById(reportType.reportTypeId);
+
+			if(rt == null) return null;
+
+			rt.reportName = reportType.reportName;
+
+			genericRepository.Update(rt);
 
 			return new ReportTypeVM
 			{

@@ -66,12 +66,14 @@ namespace PickMeUp.Service.Services
 			if (string.IsNullOrWhiteSpace(review.comment) || review.rating == null)
 				return null;
 
-			genericRepository.Update(new Reviews
-			{
-				reviewId = review.reviewId,
-				comment = review.comment,
-				rating = review.rating,
-			});
+			Reviews r = reviewsRepository.GetById(review.reviewId);
+
+			if (r == null) return null;
+
+			r.comment = review.comment;
+			r.rating = review.rating;
+
+			genericRepository.Update(r);
 			Taxi taxi = new Taxi();
 			Reviews rev = reviewsRepository.GetById(review.reviewId);
 			if(rev.taxiId.HasValue)

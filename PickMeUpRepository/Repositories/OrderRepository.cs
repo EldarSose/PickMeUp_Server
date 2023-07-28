@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (Orders != null)
 			{
 				Orders.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

@@ -4,6 +4,7 @@ using PickMeUp.DTO.EditModel;
 using PickMeUp.DTO.ViewModel;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
+using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,16 +17,46 @@ namespace PickMeUp.Service.Services
 	public class TaxiService : BaseService<Taxi, int>, ITaxiService
 	{
 		private readonly ITaxiRepository taxiRepository;
+		private readonly IUserRepository userRepository;
 
 		public TaxiService(IGenericRepository<Taxi, int> genericRepository,
-			ITaxiRepository taxiRepository) : base(genericRepository)
+			ITaxiRepository taxiRepository,
+			IUserRepository userRepository) : base(genericRepository)
 		{
 			this.taxiRepository = taxiRepository;
+			this.userRepository = userRepository;
 		}
 
 		public TaxiVM? Add(TaxiAdd taxi)
 		{
-			throw new NotImplementedException();
+			if (taxi.userId == null || taxi.pricePerKilometer == null || taxi.startingPrice == null || 
+				string.IsNullOrWhiteSpace(taxi.taxiName) ||string.IsNullOrWhiteSpace(taxi.address))
+				return null;
+
+
+			genericRepository.Add(new Taxi
+			{
+				taxiName = taxi.taxiName,
+				userId = taxi.userId,
+				pricePerKilometer = taxi.pricePerKilometer,
+				startingPrice = taxi.startingPrice,
+				address = taxi.address,
+				isDeleted = false,
+			});
+
+			User user = new User();
+			if(taxi.userId.HasValue) 
+				user = userRepository.GetById(taxi.userId.Value);
+
+			return new TaxiVM
+			{
+				taxiName = taxi.taxiName,
+				startingPrice = taxi.startingPrice,
+				address = taxi.address,
+				pricePerKilometer = taxi.pricePerKilometer,
+				userFirstName = user.firstName,
+				userLastName = user.lastName,
+			};
 		}
 
 		public bool Delete(int id)
@@ -35,7 +66,34 @@ namespace PickMeUp.Service.Services
 
 		public TaxiVM? Update(TaxiEdit taxi)
 		{
-			throw new NotImplementedException();
+			if (taxi.pricePerKilometer == null || taxi.startingPrice == null || string.IsNullOrWhiteSpace(taxi.address))
+				return null;
+
+			Taxi ta = taxiRepository.GetById(taxi.taxiId);
+			if(ta == null) return null;
+
+			ta.pricePerKilometer = taxi.pricePerKilometer;
+			ta.startingPrice = taxi.startingPrice;
+			ta.address = taxi.address;
+
+			genericRepository.Update(ta);
+
+			Taxi t = taxiRepository.GetById(taxi.taxiId);
+
+
+			User user = new User();
+			if (t.userId.HasValue)
+				user = userRepository.GetById(t.userId.Value);
+
+			return new TaxiVM
+			{
+				taxiName = t.taxiName,
+				startingPrice = taxi.startingPrice,
+				address = taxi.address,
+				pricePerKilometer = taxi.pricePerKilometer,
+				userFirstName = user.firstName,
+				userLastName = user.lastName,
+			};
 		}
 	}
 }

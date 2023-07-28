@@ -23,6 +23,7 @@ namespace PickMeUp.Repository.Repositories
 			if(car != null)
 			{
 				car.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

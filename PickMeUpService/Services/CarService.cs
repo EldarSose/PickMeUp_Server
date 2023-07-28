@@ -59,15 +59,16 @@ namespace PickMeUp.Service.Services
 		{
 			if (string.IsNullOrWhiteSpace(car.taxiNumber) || string.IsNullOrWhiteSpace(car.plateNumber) || string.IsNullOrWhiteSpace(car.carModel))
 				return null;
-			genericRepository.Update(new Car
-			{
-				carId = car.carId,
-				taxiID = car.taxiId,
-				plateNumber = car.plateNumber,
-				carModel = car.carModel,
-				taxiNumber = car.taxiNumber,
-				isDeleted = false
-			});
+
+			Car c = carRepository.GetById(car.carId);
+			if(c == null) return null;
+
+			c.taxiID = car.taxiId;
+			c.plateNumber = car.plateNumber;
+			c.carModel = car.carModel;
+			c.taxiNumber = car.taxiNumber;
+			c.isDeleted = false;
+			genericRepository.Update(c);
 
 			var taxi = taxiService.GetById(car.taxiId);
 

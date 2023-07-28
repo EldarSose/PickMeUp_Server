@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (DriverRatings != null)
 			{
 				DriverRatings.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

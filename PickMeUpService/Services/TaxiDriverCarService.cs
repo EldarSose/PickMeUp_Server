@@ -4,6 +4,7 @@ using PickMeUp.DTO.EditModel;
 using PickMeUp.DTO.ViewModel;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
+using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,16 +17,57 @@ namespace PickMeUp.Service.Services
 	public class TaxiDriverCarService : BaseService<TaxiDriverCar, int>, ITaxiDriverCarService
 	{
 		private readonly ITaxiDriverCarRepository taxiDriverCarRepository;
+		private readonly IUserRepository userRepository;
+		private readonly ITaxiRepository taxiRepository;
+		private readonly ICarRepository carRepository;
 
 		public TaxiDriverCarService(IGenericRepository<TaxiDriverCar, int> genericRepository,
-			ITaxiDriverCarRepository taxiDriverCarRepository) : base(genericRepository)
+			ITaxiDriverCarRepository taxiDriverCarRepository,
+			IUserRepository userRepository,
+			ITaxiRepository taxiRepository,
+			ICarRepository carRepository) : base(genericRepository)
 		{
 			this.taxiDriverCarRepository = taxiDriverCarRepository;
+			this.userRepository = userRepository;
+			this.taxiRepository = taxiRepository;
+			this.carRepository = carRepository;
 		}
 
 		public TaxiDriverCarVM? Add(TaxiDriverCarAdd taxiDriverCar)
 		{
-			throw new NotImplementedException();
+			if (taxiDriverCar.taxiDriverId == null || taxiDriverCar.carId == null)
+				return null;
+
+
+			genericRepository.Add(new TaxiDriverCar
+			{
+				carId = taxiDriverCar.carId,
+				taxiDriverId = taxiDriverCar.taxiDriverId,
+				isDeleted = false,
+			});
+
+			Taxi taxi = new Taxi();
+			Car car = new Car();
+			User user = new User();
+
+			if (taxiDriverCar.taxiDriverId.HasValue)
+				user = userRepository.GetById(taxiDriverCar.taxiDriverId.Value);
+
+			if (taxiDriverCar.carId.HasValue)
+				car = carRepository.GetById(taxiDriverCar.carId.Value);
+
+			if (car.taxiID.HasValue)
+				taxi = taxiRepository.GetById(car.taxiID.Value);
+
+			return new TaxiDriverCarVM
+			{
+				taxiDriverFirstName = user.firstName,
+				taxiDriverLastName = user.lastName,
+				carModel = car.carModel,
+				plateNumber = car.plateNumber,
+				taxiNumber = car.taxiNumber,
+				taxiName = taxi.taxiName
+			};
 		}
 
 		public bool Delete(int id)
@@ -35,7 +77,39 @@ namespace PickMeUp.Service.Services
 
 		public TaxiDriverCarVM? Update(TaxiDriverCarEdit taxiDriverCar)
 		{
-			throw new NotImplementedException();
+			if (taxiDriverCar.taxiDriverId == null || taxiDriverCar.carId == null)
+				return null;
+
+			TaxiDriverCar tdc = taxiDriverCarRepository.GetAll().FirstOrDefault(x => x.carId == taxiDriverCar.carId);
+
+			if (tdc == null) return null;
+
+			tdc.taxiDriverId = taxiDriverCar.taxiDriverId;
+
+			genericRepository.Update(tdc);
+
+			Taxi taxi = new Taxi();
+			Car car = new Car();
+			User user = new User();
+
+			if (taxiDriverCar.taxiDriverId.HasValue)
+				user = userRepository.GetById(taxiDriverCar.taxiDriverId.Value);
+
+			if (taxiDriverCar.carId.HasValue)
+				car = carRepository.GetById(taxiDriverCar.carId.Value);
+
+			if (car.taxiID.HasValue)
+				taxi = taxiRepository.GetById(car.taxiID.Value);
+
+			return new TaxiDriverCarVM
+			{
+				taxiDriverFirstName = user.firstName,
+				taxiDriverLastName = user.lastName,
+				carModel = car.carModel,
+				plateNumber = car.plateNumber,
+				taxiNumber = car.taxiNumber,
+				taxiName = taxi.taxiName
+			};
 		}
 	}
 }

@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (taxiDriverCars != null)
 			{
 				taxiDriverCars.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

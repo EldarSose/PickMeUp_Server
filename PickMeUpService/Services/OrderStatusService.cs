@@ -49,12 +49,14 @@ namespace PickMeUp.Service.Services
 		{
 			if (string.IsNullOrWhiteSpace(orderStatus.orderStatusName) || string.IsNullOrWhiteSpace(orderStatus.orderStatusDescription))
 				return null;
-			genericRepository.Update(new OrderStatus
-			{
-				ordedStatusId = orderStatus.ordedStatusId,
-				orderStatusName = orderStatus.orderStatusName,
-				orderStatusDescription = orderStatus.orderStatusDescription
-			});
+
+			OrderStatus os = orderStatusRepository.GetById(orderStatus.ordedStatusId);
+
+			if(os == null) return null;
+
+			os.orderStatusDescription = orderStatus.orderStatusDescription;
+			os.orderStatusName = orderStatus.orderStatusName;
+			genericRepository.Update(os);
 
 			return new OrderStatusVM
 			{

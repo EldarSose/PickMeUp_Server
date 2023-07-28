@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (Shift != null)
 			{
 				Shift.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

@@ -54,13 +54,14 @@ namespace PickMeUp.Service.Services
 			if (string.IsNullOrWhiteSpace(role.roleName) || string.IsNullOrWhiteSpace(role.roleDescription))
 				return null;
 
-			genericRepository.Update(new Roles
-			{
-				roleId= role.roleId,
-				roleName = role.roleName,
-				roleDescription = role.roleDescription,
-				isDeleted = false
-			});
+			Roles r = rolesRepository.GetById(role.roleId);
+
+			if (r == null) return null;
+
+			r.roleName = role.roleName;
+			r.roleDescription = role.roleDescription;
+
+			genericRepository.Update(r);
 
 
 			return new RolesVM

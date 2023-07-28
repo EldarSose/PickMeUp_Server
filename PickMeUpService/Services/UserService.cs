@@ -80,13 +80,14 @@ private readonly IGenderRepository genderRepository;
 				string.IsNullOrWhiteSpace(user.phoneNumber))
 				return null;
 
-			genericRepository.Update(new User
-			{
-				userId = user.userId,
-				firstName = user.firstName,
-				lastName = user.lastName,
-				phoneNumber = user.phoneNumber,
-			});
+			User u = userRepository.GetById(user.userId);
+			if (u == null) return null;
+
+			u.firstName= user.firstName;
+			u.lastName= user.lastName;
+			u.phoneNumber= user.phoneNumber;
+
+			genericRepository.Update(u);
 			User user1 = userRepository.GetById(user.userId);
 			Taxi taxi = new Taxi();
 

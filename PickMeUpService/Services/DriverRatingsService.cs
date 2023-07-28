@@ -30,6 +30,7 @@ namespace PickMeUp.Service.Services
 		{
 			if(string.IsNullOrWhiteSpace(ratings.comment) || ratings.rating == null)
 				return null;
+
 			genericRepository.Add(new DriverRatings
 			{
 				userId = ratings.userId,
@@ -62,15 +63,16 @@ namespace PickMeUp.Service.Services
 		{
 			if (string.IsNullOrWhiteSpace(ratings.comment) || ratings.rating == null)
 				return null;
-			genericRepository.Update(new DriverRatings
-			{
-				driverRatingsId = ratings.driverRatingsId,
-				userId = ratings.userId,
-				rating = ratings.rating,
-				comment = ratings.comment,
-				driverId = ratings.driverId,
-				isDeleted = false
-			});
+
+			DriverRatings dr = driverRatingsRepository.GetById(ratings.driverRatingsId);
+
+			if (dr == null) return null;
+
+			dr.rating = ratings.rating;
+			dr.userId = ratings.userId;
+			dr.driverId = ratings.driverId;
+			dr.comment = ratings.comment;
+			genericRepository.Update(dr);
 
 			var driver = userRepository.GetById(ratings.driverId);
 			var user = userRepository.GetById(ratings.userId);

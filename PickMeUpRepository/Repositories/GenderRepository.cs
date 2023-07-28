@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (Genders != null)
 			{
 				Genders.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

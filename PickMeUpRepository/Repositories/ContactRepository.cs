@@ -22,6 +22,7 @@ namespace PickMeUp.Repository.Repositories
 			if (contact != null)
 			{
 				contact.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

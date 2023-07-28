@@ -54,12 +54,14 @@ namespace PickMeUp.Service.Services
 			if (string.IsNullOrWhiteSpace(userAccount.userName))
 				return null;
 
-			
-			UserAccount useracc = userAccountRepository.GetAll().FirstOrDefault(x => x.email == userAccount.userName);
+
+			UserAccount useracc = userAccountRepository.GetById(userAccount.Id);
+
+			if(useracc == null) return null;
 
 
-			//ako su i username i password razliciti od null onda se mijenja password
-			if(!string.IsNullOrWhiteSpace(userAccount.userName) && !string.IsNullOrWhiteSpace(userAccount.password))
+			//ako je poslani username jednak username u bazi i password razlicit od null onda se mijenja password
+			if(string.Compare(useracc.email, userAccount.userName) == 1 && !string.IsNullOrWhiteSpace(userAccount.password))
 			{
 				using var hmac = new HMACSHA512(useracc.passwordSalt);
 
@@ -73,25 +75,26 @@ namespace PickMeUp.Service.Services
 
 				using var hmac1 = new HMACSHA512();
 
-				genericRepository.Update(new UserAccount
-				{
-					userAccountId = useracc.userAccountId,
-					email = userAccount.userName,
-					passwordHash = hmac1.ComputeHash(Encoding.UTF8.GetBytes(userAccount.password)),
-					passwordSalt = hmac1.Key,
-				});
+				useracc.userAccountId = useracc.userAccountId;
+				useracc.email = userAccount.userName;
+				useracc.passwordHash = hmac1.ComputeHash(Encoding.UTF8.GetBytes(userAccount.password));
+				useracc.passwordSalt = hmac1.Key;
+
+				genericRepository.Update(useracc);
 			}
 
-			//ako je samo username razlicit od null onda se samo mijenja username
-			if(!string.IsNullOrWhiteSpace(userAccount.userName) && string.IsNullOrWhiteSpace(userAccount.password))
+			useracc = userAccountRepository.GetById(userAccount.Id);
+
+			if(useracc == null) return null;
+
+			//ako je poslani username razlicit od usernamea u bazi onda se mijenja username
+			if (string.Compare(useracc.email, userAccount.userName) == 0)
 			{
-				genericRepository.Update(new UserAccount
-				{
-					userAccountId = useracc.userAccountId,
-					email= userAccount.userName,
-					passwordHash = useracc.passwordHash,
-					passwordSalt = useracc.passwordSalt,
-				});
+				useracc.userAccountId = useracc.userAccountId;
+				useracc.email = userAccount.userName;
+				useracc.passwordHash = useracc.passwordHash;
+				useracc.passwordSalt = useracc.passwordSalt;
+				genericRepository.Update(useracc);
 			}
 
 			return new UserAccountVM

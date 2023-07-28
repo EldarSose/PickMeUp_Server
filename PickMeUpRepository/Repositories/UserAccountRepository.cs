@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (UserAccounts != null)
 			{
 				UserAccounts.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

@@ -21,6 +21,7 @@ namespace PickMeUp.Repository.Repositories
 			if (Roles != null)
 			{
 				Roles.isDeleted = true;
+				dbContext.SaveChanges();
 				return true;
 			}
 			else

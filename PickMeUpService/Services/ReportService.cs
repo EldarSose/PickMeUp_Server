@@ -63,12 +63,13 @@ namespace PickMeUp.Service.Services
 			if (string.IsNullOrWhiteSpace(report.reportName) || string.IsNullOrWhiteSpace(report.reportDescription))
 				return null;
 
-			genericRepository.Update(new Report
-			{
-				reportId = report.reportId,
-				reportName = report.reportName,
-				reportDescription = report.reportDescription,
-			});
+			Report r = reportRepository.GetById(report.reportId);
+
+			if (r == null) return null;
+
+			r.reportName = report.reportName;
+			r.reportDescription = report.reportDescription;
+			genericRepository.Update(r);
 
 			Report report1 = reportRepository.GetById(report.reportId);
 			User user = userRepository.GetById((int)report1.userId);

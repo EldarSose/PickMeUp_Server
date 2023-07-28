@@ -64,14 +64,15 @@ namespace PickMeUp.Service.Services
 		{
             if (order.orderStatusId == null || order.taxiDriverId == null || order.timeUntilArrival == null)
                 return null;
-			genericRepository.Update(new Order
-			{
-				orderId = order.orderId,
-				orderStatusId = order.orderStatusId,
-				taxiDriverId = order.taxiDriverId,
-				timeUntilArrival = order.timeUntilArrival,
-				isDeleted = false
-			});
+
+			Order o = orderRepository.GetById(order.orderId);
+
+			if (o == null) return null;
+
+			o.timeUntilArrival = order.timeUntilArrival;
+			o.taxiDriverId = order.taxiDriverId;
+			o.orderStatusId = order.orderStatusId;
+			genericRepository.Update(o);
 
 			Order order1 = orderRepository.GetById(order.orderId);
 			Taxi taxi = new Taxi();
