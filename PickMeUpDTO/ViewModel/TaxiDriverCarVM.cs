@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class TaxiDriverCarVM
 	{
+		public int? id { get; set; }
 		public string? taxiDriverFirstName { get; set; }
 		public string? taxiDriverLastName { get; set; }
 		public string? carModel { get; set; }

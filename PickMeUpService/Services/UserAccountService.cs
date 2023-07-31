@@ -29,7 +29,7 @@ namespace PickMeUp.Service.Services
 			if (string.IsNullOrWhiteSpace(userAccount.email) || string.IsNullOrWhiteSpace(userAccount.password))
 				return null;
 			using var hmac = new HMACSHA512();
-			genericRepository.Add(new UserAccount
+			UserAccount useracc = userAccountRepository.AddAcc(new UserAccount
 			{
 				email = userAccount.email,
 				passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userAccount.password)),
@@ -39,7 +39,8 @@ namespace PickMeUp.Service.Services
 
 			return new UserAccountVM 
 			{ 
-				userName = userAccount.email
+				userName = userAccount.email,
+				id = useracc.userAccountId
 			};
 		}
 

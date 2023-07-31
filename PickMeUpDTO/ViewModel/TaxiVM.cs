@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class TaxiVM
 	{
+		public int? id { get; set; }
 		public string? taxiName { get; set; }
 		public float? startingPrice { get; set; }
 		public float? pricePerKilometer { get; set; }

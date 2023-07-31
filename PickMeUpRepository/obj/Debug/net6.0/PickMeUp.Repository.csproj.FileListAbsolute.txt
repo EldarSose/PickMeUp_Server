@@ -49,3 +49,5 @@ C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\refi
 C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.pdb
 C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.genruntimeconfig.cache
 C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\ref\PickMeUp.Repository.dll
+C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpRepository\bin\Debug\net6.0\PickMeUp.DTO.dll
+C:\Users\PC\Desktop\PickMeUp_Server\PickMeUpRepository\bin\Debug\net6.0\PickMeUp.DTO.pdb

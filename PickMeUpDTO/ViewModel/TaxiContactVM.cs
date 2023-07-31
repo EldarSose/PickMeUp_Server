@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class TaxiContactVM
 	{
+		public int? id { get; set; }
 		public string? taxiName { get; set; }
 		public string? contact { get; set; }
 	}

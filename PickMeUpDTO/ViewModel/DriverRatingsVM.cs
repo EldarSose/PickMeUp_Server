@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class DriverRatingsVM
 	{
+		public int? id { get; set; }
 		public string? driverFirstName { get; set; }
 		public string? driverLastName { get; set; }
 		public string? userFirstName { get; set; }

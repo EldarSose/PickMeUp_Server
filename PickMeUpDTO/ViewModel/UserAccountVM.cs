@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class UserAccountVM
 	{
+		public int? id { get; set; }
 		public string? userName { get; set; }
 	}
 }

@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.Design": "7.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.4",
-          "PickMeUp.Core": "1.0.0"
+          "PickMeUp.Core": "1.0.0",
+          "PickMeUp.DTO": "1.0.0"
         },
         "runtime": {
           "PickMeUp.Repository.dll": {}
@@ -705,6 +706,11 @@
         "runtime": {
           "PickMeUp.Core.dll": {}
         }
+      },
+      "PickMeUp.DTO/1.0.0": {
+        "runtime": {
+          "PickMeUp.DTO.dll": {}
+        }
       }
     }
   },
@@ -1191,6 +1197,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "PickMeUp.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PickMeUp.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

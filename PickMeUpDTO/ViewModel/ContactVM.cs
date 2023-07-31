@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class ContactVM
 	{
+		public int? id { get; set; }
 		public string? contactName { get; set; }
 		public string? contactInfo { get; set; }
 	}

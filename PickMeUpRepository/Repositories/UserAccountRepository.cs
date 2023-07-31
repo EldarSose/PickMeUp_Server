@@ -1,4 +1,6 @@
-﻿using PickMeUp.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using PickMeUp.Core.Entities;
+using PickMeUp.DTO.AddModel;
 using PickMeUp.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -26,6 +28,12 @@ namespace PickMeUp.Repository.Repositories
 			}
 			else
 				return false;
+		}
+		public UserAccount AddAcc(UserAccount entity)
+		{
+			dbContext.UserAccounts.Add(entity);
+			dbContext.SaveChanges();
+			return dbContext.UserAccounts.AsEnumerable().First(x => string.Compare(x.email, entity.email) == 1);
 		}
 	}
 }

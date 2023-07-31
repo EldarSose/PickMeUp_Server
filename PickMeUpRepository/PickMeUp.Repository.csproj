@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PickMeUpCore\PickMeUp.Core.csproj" />
+    <ProjectReference Include="..\PickMeUpDTO\PickMeUp.DTO.csproj" />
   </ItemGroup>
 
 </Project>

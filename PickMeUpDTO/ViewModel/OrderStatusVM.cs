@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class OrderStatusVM
 	{
+		public int? id { get; set; }
 		public string? orderStatusName { get; set; }
 		public string? orderStatusDescription { get; set; }
 	}

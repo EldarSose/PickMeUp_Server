@@ -625,7 +625,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4",
-          "PickMeUp.Core": "1.0.0"
+          "PickMeUp.Core": "1.0.0",
+          "PickMeUp.DTO": "1.0.0"
         },
         "runtime": {
           "PickMeUp.Repository.dll": {}

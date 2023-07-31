@@ -10,5 +10,6 @@ namespace PickMeUp.Repository.Interfaces
 	public interface IUserAccountRepository : IGenericRepository<UserAccount, int>
 	{
 		bool Delete(int id);
+		UserAccount AddAcc(UserAccount entity);
 	}
 }

@@ -8,6 +8,7 @@ namespace PickMeUp.DTO.ViewModel
 {
 	public class ReportVM
 	{
+		public int? id { get; set; }
 		public string? reportName { get; set; }
 		public string? reportDescription { get; set; }
 		public DateTime? madeAt { get; set; }

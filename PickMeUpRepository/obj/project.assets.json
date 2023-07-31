@@ -1165,6 +1165,16 @@
         "runtime": {
           "bin/placeholder/PickMeUp.Core.dll": {}
         }
+      },
+      "PickMeUp.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PickMeUp.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PickMeUp.DTO.dll": {}
+        }
       }
     }
   },
@@ -3515,6 +3525,11 @@
       "type": "project",
       "path": "../PickMeUpCore/PickMeUp.Core.csproj",
       "msbuildProject": "../PickMeUpCore/PickMeUp.Core.csproj"
+    },
+    "PickMeUp.DTO/1.0.0": {
+      "type": "project",
+      "path": "../PickMeUpDTO/PickMeUp.DTO.csproj",
+      "msbuildProject": "../PickMeUpDTO/PickMeUp.DTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3523,7 +3538,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.4",
-      "PickMeUp.Core >= 1.0.0"
+      "PickMeUp.Core >= 1.0.0",
+      "PickMeUp.DTO >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3555,6 +3571,9 @@
           "projectReferences": {
             "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj": {
               "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj"
+            },
+            "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj": {
+              "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj"
             }
           }
         }

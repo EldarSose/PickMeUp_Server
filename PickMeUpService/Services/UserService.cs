@@ -19,32 +19,38 @@ namespace PickMeUp.Service.Services
 		private readonly ITaxiRepository taxiRepository;
 private readonly IGenderRepository genderRepository;
 		private readonly IUserAccountRepository userAccountRepository;
+		private readonly IUserAccountService userAccountService;
 
 		public UserService(IGenericRepository<User, int> genericRepository,
 			IUserRepository userRepository,
 			ITaxiRepository taxiRepository,
 			IGenderRepository genderRepository, 
-			IUserAccountRepository userAccountRepository) : base(genericRepository)
+			IUserAccountRepository userAccountRepository,
+			IUserAccountService userAccountService) : base(genericRepository)
 		{
 			this.userRepository = userRepository;
 			this.taxiRepository = taxiRepository;
 			this.genderRepository = genderRepository;
 			this.userAccountRepository = userAccountRepository;
+			this.userAccountService = userAccountService;
 		}
 
 		public UserVM? Add(UserAdd user)
 		{
 			if (string.IsNullOrWhiteSpace(user.firstName) || string.IsNullOrWhiteSpace(user.lastName) ||
-				user.dateOfBirth == null || user.userAccountID == null || user.genderID == null || 
+				user.dateOfBirth == null || string.IsNullOrWhiteSpace(user.email)|| string.IsNullOrWhiteSpace(user.password)
+				|| user.genderID == null || 
 				string.IsNullOrWhiteSpace(user.phoneNumber))
 				return null;
+
+			UserAccountVM useracc =  userAccountService.Add(new UserAccountAdd { email = user.email, password = user.password });
 
 			genericRepository.Add(new User
 			{
 				firstName = user.firstName,
 				lastName = user.lastName,
 				dateOfBirth = user.dateOfBirth,
-				userAccountID = user.userAccountID,
+				userAccountID = useracc.id,
 				taxiCompanyID = user.taxiCompanyID,
 				phoneNumber= user.phoneNumber,
 				genderID = user.genderID,
@@ -55,7 +61,6 @@ private readonly IGenderRepository genderRepository;
 				taxi = taxiRepository.GetById((int)user.taxiCompanyID);
 
 			Gender gender = genderRepository.GetById((int)user.genderID);
-			UserAccount userAccount = userAccountRepository.GetById((int)user.userAccountID);
 
 			return new UserVM
 			{
@@ -64,7 +69,7 @@ private readonly IGenderRepository genderRepository;
 				dateOfBirth = user.dateOfBirth,
 				taxiName = taxi.taxiName,
 				gender = gender.description,
-				userName = userAccount.email,
+				userName = useracc.userName,
 				phoneNumber = user.phoneNumber
 			};
 		}

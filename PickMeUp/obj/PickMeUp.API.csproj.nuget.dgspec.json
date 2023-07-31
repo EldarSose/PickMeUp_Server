@@ -140,6 +140,9 @@
             "projectReferences": {
               "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj": {
                 "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj"
+              },
+              "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj": {
+                "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj"
               }
             }
           }
