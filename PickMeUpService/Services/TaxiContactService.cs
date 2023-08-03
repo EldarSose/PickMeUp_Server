@@ -43,7 +43,7 @@ namespace PickMeUp.Service.Services
 				isDeleted = false,
 			});
 
-			Taxi taxi = new Taxi();
+            Core.Entities.Taxi taxi = new Core.Entities.Taxi();
 			Contact contact = new Contact();
 
 			if (taxiContact.taxiId.HasValue)
@@ -77,7 +77,7 @@ namespace PickMeUp.Service.Services
 
 			genericRepository.Update(tx);
 
-			Taxi taxi = new Taxi();
+            Core.Entities.Taxi taxi = new Core.Entities.Taxi();
 			Contact contact = new Contact();
 
 			if (taxiContact.taxiId.HasValue)

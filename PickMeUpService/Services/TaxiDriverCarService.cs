@@ -46,7 +46,7 @@ namespace PickMeUp.Service.Services
 				isDeleted = false,
 			});
 
-			Taxi taxi = new Taxi();
+            Core.Entities.Taxi taxi = new Core.Entities.Taxi();
 			Car car = new Car();
 			User user = new User();
 
@@ -88,7 +88,7 @@ namespace PickMeUp.Service.Services
 
 			genericRepository.Update(tdc);
 
-			Taxi taxi = new Taxi();
+            Core.Entities.Taxi taxi = new Core.Entities.Taxi();
 			Car car = new Car();
 			User user = new User();
 

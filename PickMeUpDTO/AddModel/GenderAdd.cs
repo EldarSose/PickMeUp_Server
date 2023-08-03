@@ -8,6 +8,6 @@ namespace PickMeUp.DTO.AddModel
 {
 	public class GenderAdd
 	{
-		public string description { get; set; }
+		public string? description { get; set; }
 	}
 }

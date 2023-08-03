@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickMeUp.API", "PickMeUp\PickMeUp.API.csproj", "{8C722C3C-7CD6-4A2F-AAD8-5CAA2AEE4DC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickMeUp.API", "PickMeUp\PickMeUp.API.csproj", "{8C722C3C-7CD6-4A2F-AAD8-5CAA2AEE4DC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickMeUp.Service", "PickMeUpService\PickMeUp.Service.csproj", "{6C5D91FD-4A0D-4418-AE73-7A0EBC167FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickMeUp.Service", "PickMeUpService\PickMeUp.Service.csproj", "{6C5D91FD-4A0D-4418-AE73-7A0EBC167FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickMeUp.Repository", "PickMeUpRepository\PickMeUp.Repository.csproj", "{C476F086-420B-4F36-A6FC-B89388B36A78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickMeUp.Repository", "PickMeUpRepository\PickMeUp.Repository.csproj", "{C476F086-420B-4F36-A6FC-B89388B36A78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickMeUp.Core", "PickMeUpCore\PickMeUp.Core.csproj", "{F3739B7B-2668-4289-8D86-13C85BCF148D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickMeUp.Core", "PickMeUpCore\PickMeUp.Core.csproj", "{F3739B7B-2668-4289-8D86-13C85BCF148D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickMeUp.DTO", "PickMeUpDTO\PickMeUp.DTO.csproj", "{FEF3F05D-22EF-471F-9216-EB464EAE0D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickMeUp.DTO", "PickMeUpDTO\PickMeUp.DTO.csproj", "{FEF3F05D-22EF-471F-9216-EB464EAE0D75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{2F69711C-5CAC-4739-9E31-D437558BD489}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,14 +10,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["PickMeUp/PickMeUp.csproj", "PickMeUp/"]
+COPY ["PickMeUp/PickMeUp.API.csproj", "PickMeUp/"]
 RUN dotnet restore "PickMeUp/PickMeUp.csproj"
 COPY . .
 WORKDIR "/src/PickMeUp"
-RUN dotnet build "PickMeUp.csproj" -c Release -o /app/build
+RUN dotnet build "PickMeUp.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PickMeUp.csproj" -c Release -o /app/publish 
+RUN dotnet publish "PickMeUp.API.csproj" -c Release -o /app/publish 
 
 FROM base AS final
 WORKDIR /app

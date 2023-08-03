@@ -5,6 +5,7 @@ using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using PickMeUp.Service.Services;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -73,5 +74,19 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+	var dataContext = scope.ServiceProvider.GetRequiredService<PickMeUpDbContext>();
+	dataContext.Database.EnsureCreated();
+
+	//new SetupService().Init(dataContext);
+	//new SetupService().InsertData(dataContext);
+
+
+	//var conn = dataContext.Database.GetConnectionString();
+
+	//dataContext.Database.Migrate();
+}
 
 app.Run();

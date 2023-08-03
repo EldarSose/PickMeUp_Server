@@ -17,6 +17,7 @@ namespace PickMeUp.Repository
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
+			
 			base.OnConfiguring(optionsBuilder);
 		}
 

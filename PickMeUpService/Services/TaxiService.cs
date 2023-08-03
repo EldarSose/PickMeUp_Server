@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 
 namespace PickMeUp.Service.Services
 {
-	public class TaxiService : BaseService<Taxi, int>, ITaxiService
+	public class TaxiService : BaseService<Core.Entities.Taxi, int>, ITaxiService
 	{
 		private readonly ITaxiRepository taxiRepository;
 		private readonly IUserRepository userRepository;
 
-		public TaxiService(IGenericRepository<Taxi, int> genericRepository,
+		public TaxiService(IGenericRepository<Core.Entities.Taxi, int> genericRepository,
 			ITaxiRepository taxiRepository,
 			IUserRepository userRepository) : base(genericRepository)
 		{
@@ -34,7 +34,7 @@ namespace PickMeUp.Service.Services
 				return null;
 
 
-			genericRepository.Add(new Taxi
+            genericRepository.Add(new Core.Entities.Taxi
 			{
 				taxiName = taxi.taxiName,
 				userId = taxi.userId,
@@ -69,7 +69,7 @@ namespace PickMeUp.Service.Services
 			if (taxi.pricePerKilometer == null || taxi.startingPrice == null || string.IsNullOrWhiteSpace(taxi.address))
 				return null;
 
-			Taxi ta = taxiRepository.GetById(taxi.taxiId);
+            Core.Entities.Taxi ta = taxiRepository.GetById(taxi.taxiId);
 			if(ta == null) return null;
 
 			ta.pricePerKilometer = taxi.pricePerKilometer;
@@ -78,7 +78,7 @@ namespace PickMeUp.Service.Services
 
 			genericRepository.Update(ta);
 
-			Taxi t = taxiRepository.GetById(taxi.taxiId);
+            Core.Entities.Taxi t = taxiRepository.GetById(taxi.taxiId);
 
 
 			User user = new User();

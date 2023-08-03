@@ -9,6 +9,6 @@ namespace PickMeUp.DTO.EditModel
 	public class GenderEdit
 	{
 		public int genderId { get; set; }
-		public string description { get; set; }
+		public string? description { get; set; }
 	}
 }
