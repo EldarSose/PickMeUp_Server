@@ -33,7 +33,7 @@ namespace PickMeUp.Repository.Repositories
 		{
 			dbContext.UserAccounts.Add(entity);
 			dbContext.SaveChanges();
-			return dbContext.UserAccounts.AsEnumerable().First(x => string.Compare(x.email, entity.email) == 1);
+			return dbContext.UserAccounts.AsEnumerable().First(x => string.Compare(x.email, entity.email) == 0);
 		}
 	}
 }
