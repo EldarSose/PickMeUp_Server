@@ -5,8 +5,21 @@ using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using PickMeUp.Service.Services;
 
+var AllowAll = "AllowAll";
+
+var config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", false)
+    .Build();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowAll, policy =>
+    {
+        policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+    });
+});
 
 // Add services to the container.
 
