@@ -10,7 +10,7 @@ namespace PickMeUp.Core.Entities
 	public class Contact
 	{
 		[Key]
-		public int contactId { get; set; }
+		public int? contactId { get; set; }
 		public string? contactName { get; set; }
 		public string? contactInfo { get; set; }
 		public bool? isDeleted { get; set; }

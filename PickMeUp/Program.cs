@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PickMeUp;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
 using PickMeUp.Repository.Repositories;
@@ -97,9 +98,9 @@ using (var scope = app.Services.CreateScope())
 	//new SetupService().InsertData(dataContext);
 
 
-	//var conn = dataContext.Database.GetConnectionString();
+	var conn = dataContext.Database.GetConnectionString();
 
-	//dataContext.Database.Migrate();
+	dataContext.Database.Migrate();
 }
 
 app.Run();
