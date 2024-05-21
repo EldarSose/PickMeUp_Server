@@ -15,5 +15,6 @@ namespace PickMeUp.Service.Interfaces
 		bool Delete(int id);
 		UserVM? Add(UserAdd user);
 		UserVM? Update(UserEdit user);
+		UserVM? Login(LoginVM user);
 	}
 }

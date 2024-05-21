@@ -14,7 +14,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var konekcijskiString = builder.Configuration.GetConnectionString("DefaultConnection");
+var konekcijskiString = builder.Configuration.GetConnectionString("DefaultConnection1");
 
 var optionsBuilder = builder.Services.AddDbContext<PickMeUpDbContext>(
 	dbContextOpcije => dbContextOpcije
@@ -75,7 +75,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+/*using (var scope = app.Services.CreateScope())
 {
 	var dataContext = scope.ServiceProvider.GetRequiredService<PickMeUpDbContext>();
 	dataContext.Database.EnsureCreated();
@@ -87,6 +87,6 @@ using (var scope = app.Services.CreateScope())
 	//var conn = dataContext.Database.GetConnectionString();
 
 	//dataContext.Database.Migrate();
-}
+}*/
 
 app.Run();

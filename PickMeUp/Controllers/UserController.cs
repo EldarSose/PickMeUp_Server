@@ -50,7 +50,7 @@ namespace PickMeUp.API.Controllers
 			if (userVM == null)
 				return BadRequest();
 			else
-				return Ok(userVM);
+				return Ok();
 		}
 		[HttpPut]
 		public ActionResult<UserVM> Edit([FromBody] UserEdit user)
@@ -69,6 +69,19 @@ namespace PickMeUp.API.Controllers
 				return BadRequest();
 			else
 				return Ok();
+		}
+		[HttpPost]
+		public ActionResult<UserVM> Login([FromBody] LoginVM login)
+		{
+			var user = userService.Login(login);
+			if (user == null)
+			{
+				return NotFound();
+			}
+			else
+			{
+				return Ok(user);
+			}
 		}
 	}
 }

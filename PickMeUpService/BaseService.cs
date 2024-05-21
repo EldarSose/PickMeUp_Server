@@ -1,4 +1,5 @@
-﻿using PickMeUp.Repository;
+﻿using PickMeUp.DTO.ViewModel;
+using PickMeUp.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace PickMeUp.Service
 			void Update(TEntity entity);
 			IEnumerable<TEntity> GetAll();
 			TEntity GetById(TKey id);
-		}
+	}
 		public class BaseService<TEntity, TKey> : IBaseService<TEntity, TKey> where TEntity : class
 		{
 			public readonly IGenericRepository<TEntity, TKey> genericRepository;
