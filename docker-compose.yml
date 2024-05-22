@@ -20,7 +20,7 @@ services:
     build:
       context: .
     environment:
-      - ConnectionStrings:Server=pickmeup-sql,1433;Database=PickMeUp;User=sa;Password=QWElkj132;ConnectRetryCount=0;TrustServerCertificate=True
+      - ConnectionStrings:DefaultConnection=Server=pickmeup-sql,1433;Database=PickMeUp;User=sa;Password=QWElkj132;ConnectRetryCount=0;TrustServerCertificate=True
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - 7198:7198

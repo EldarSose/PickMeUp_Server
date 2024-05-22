@@ -1,12 +1,26 @@
 using Microsoft.EntityFrameworkCore;
+using PickMeUp;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
 using PickMeUp.Repository.Repositories;
 using PickMeUp.Service.Interfaces;
 using PickMeUp.Service.Services;
 
+var AllowAll = "AllowAll";
+
+var config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", false)
+    .Build();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowAll, policy =>
+    {
+        policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+    });
+});
 
 // Add services to the container.
 
@@ -14,7 +28,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var konekcijskiString = builder.Configuration.GetConnectionString("DefaultConnection1");
+var konekcijskiString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 var optionsBuilder = builder.Services.AddDbContext<PickMeUpDbContext>(
 	dbContextOpcije => dbContextOpcije
@@ -75,7 +89,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-/*using (var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope())
 {
 	var dataContext = scope.ServiceProvider.GetRequiredService<PickMeUpDbContext>();
 	dataContext.Database.EnsureCreated();
@@ -84,9 +98,9 @@ app.MapControllers();
 	//new SetupService().InsertData(dataContext);
 
 
-	//var conn = dataContext.Database.GetConnectionString();
+	var conn = dataContext.Database.GetConnectionString();
 
-	//dataContext.Database.Migrate();
-}*/
+	dataContext.Database.Migrate();
+}
 
 app.Run();
