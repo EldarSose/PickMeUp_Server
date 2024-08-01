@@ -1,4 +1,8 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using PickMeUp;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
@@ -32,7 +36,7 @@ var konekcijskiString = builder.Configuration.GetConnectionString("DefaultConnec
 
 var optionsBuilder = builder.Services.AddDbContext<PickMeUpDbContext>(
 	dbContextOpcije => dbContextOpcije
-	.UseSqlServer(konekcijskiString));
+	.UseSqlServer(konekcijskiString, b => b.MigrationsAssembly("PickMeUp.Repository")));
 
 //Repository
 builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
