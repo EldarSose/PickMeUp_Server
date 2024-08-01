@@ -8,6 +8,8 @@ using PickMeUp.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -111,6 +113,41 @@ private readonly IGenderRepository genderRepository;
 				gender = gender.description,
 				userName = userAccount.email,
 				phoneNumber = user1.phoneNumber
+			};
+		}
+
+		public UserVM? Login(LoginVM user)
+		{
+			if (user == null) return null;
+
+			int? userAccId = userAccountService.GetUsername(user.UserName);
+
+			if (userAccId == null) return null;
+
+			IEnumerable<User> users = genericRepository.GetAll();
+
+			User? u = users.Where(x => x.userAccountID == userAccId) as User;
+
+			if (u == null) return null;
+
+			Taxi taxi = new Taxi();
+
+			if (u.taxiCompanyID != null)
+				taxi = taxiRepository.GetById((int)u.taxiCompanyID);
+
+			Gender gender = genderRepository.GetById((int)u.genderID);
+
+			UserAccount userAccount = userAccountRepository.GetById((int)u.userAccountID);
+
+			return new UserVM
+			{
+				firstName = u.firstName,
+				lastName = u.lastName,
+				dateOfBirth = u.dateOfBirth,
+				taxiName = taxi.taxiName,
+				gender = gender.description,
+				userName = userAccount.email,
+				phoneNumber = u.phoneNumber
 			};
 		}
 	}

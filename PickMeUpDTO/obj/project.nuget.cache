@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pptZvY4dNEES2csXb71x4ONZAgq8vt6MDRyMWrz/WiDp88tB9Ykszav3Fc2l0hOAPNGcbMvRM/5FMmfj3m0wNg==",
+  "dgSpecHash": "XHUgDgrobGlQrdsf/3Oowd06A5m0XWPnBvcr9NvnX+ck72X0F8DaYDC8ZbvqEBJSKzUp7IUaTDROz0g4fcSR5Q==",
   "success": true,
-  "projectFilePath": "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.20\\microsoft.windowsdesktop.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.20\\microsoft.netcore.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.20\\microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

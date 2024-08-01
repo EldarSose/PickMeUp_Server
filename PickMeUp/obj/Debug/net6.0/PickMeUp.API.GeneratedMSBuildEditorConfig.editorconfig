@@ -8,4 +8,14 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PickMeUp.API
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Develop\PickMeUp_Server\PickMeUp\
+=======
+build_property.RootNamespace = PickMeUp.API
+build_property.ProjectDir = C:\Users\PC\Desktop\PickMeUp_Server\PickMeUp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\PickMeUp_Server\PickMeUp
+build_property._RazorSourceGeneratorDebug = 
+>>>>>>> 422f14951a284d5938d10815ee7f640750afb15a

@@ -8,6 +8,7 @@ using PickMeUp.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,20 @@ namespace PickMeUp.Service.Services
 		public bool Delete(int id)
 		{
 			return userAccountRepository.Delete(id);
+		}
+
+		public int? GetUsername(string? username)
+		{
+			if(string.IsNullOrWhiteSpace(username)) return null;
+
+			IEnumerable<UserAccount> acc1 = genericRepository.GetAll();
+
+
+			UserAccount? acc = acc1.Where(x => String.Compare(x.email, username) == 0) as UserAccount;
+
+			if (acc == null) return null;
+
+			return acc.userAccountId;
 		}
 
 		public UserAccountVM? Update(UserAccountEdit userAccount)
