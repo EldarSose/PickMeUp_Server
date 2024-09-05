@@ -19,6 +19,7 @@ services:
     restart: unless-stopped
     build:
       context: .
+      dockerfile: Dockerfile
     environment:
       - ConnectionStrings:DefaultConnection=Server=pickmeup-sql,1433;Database=PickMeUp;User=sa;Password=QWElkj132;ConnectRetryCount=0;TrustServerCertificate=True
       - ASPNETCORE_ENVIRONMENT=Development
@@ -26,8 +27,6 @@ services:
       - 7198:7198
     networks:
       - pickmeupnet2023
-    links:
-      - pickmeup-sql
     depends_on:
       - pickmeup-sql
       

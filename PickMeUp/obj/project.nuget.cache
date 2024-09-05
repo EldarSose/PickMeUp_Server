@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CRbjH2imfCJV2oFa55sv8jQXil36Eg36I7mgA7BxrKuVKAtlu2UUtaR9pyisdEQ8muQJ6a62dlEpiehNNVObiA==",
+  "dgSpecHash": "XBvp11zxSeeR0yo6CYWFowq60f0/UOlnSzfCPumDcrtdFnmSti7d+L+Hxl1Dg050uPGydTqx5ZY4Nb1JR5Vwpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUp\\PickMeUp.API.csproj",
   "expectedPackageFiles": [
@@ -84,5 +84,12 @@
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.20\\microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.20\\microsoft.netcore.app.host.win-x64.6.0.20.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

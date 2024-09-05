@@ -21,17 +21,6 @@ namespace PickMeUp.Repository
 			base.OnConfiguring(optionsBuilder);
 		}
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
-		{
-			base.OnModelCreating(modelBuilder);
-			modelBuilder.Entity<TaxiContact>()
-				.HasKey(x => new { x.contactId, x.taxiId });
-			modelBuilder.Entity<RoleUser>()
-				.HasKey(x => new { x.userId, x.roleId });
-			modelBuilder.Entity<TaxiDriverCar>()
-				.HasKey(x => new { x.carId, x.taxiDriverId });
-		}
-
 		public DbSet<Car> Cars { get;set; }
 		public DbSet<Contact> Contacts { get;set; }
 		public DbSet<DriverRatings> DriverRatings { get;set; }
@@ -49,5 +38,16 @@ namespace PickMeUp.Repository
 		public DbSet<TaxiDriverCar> taxiDriverCars { get;set; }
 		public DbSet<User> Users { get;set; }
 		public DbSet<UserAccount> UserAccounts { get;set; }
-	}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<TaxiContact>()
+                .HasKey(x => new { x.contactId, x.taxiId });
+            modelBuilder.Entity<RoleUser>()
+                .HasKey(x => new { x.userId, x.roleId });
+            modelBuilder.Entity<TaxiDriverCar>()
+                .HasKey(x => new { x.carId, x.taxiDriverId });
+        }
+    }
 }
