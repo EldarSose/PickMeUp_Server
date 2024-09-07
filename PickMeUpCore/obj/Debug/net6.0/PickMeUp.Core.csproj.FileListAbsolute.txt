@@ -37,7 +37,6 @@ C:\develop\PickMeUp RS2\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\ref\PickMe
 C:\Develop\PickMeUp_Server\PickMeUpCore\bin\Debug\net6.0\PickMeUp.Core.deps.json
 C:\Develop\PickMeUp_Server\PickMeUpCore\bin\Debug\net6.0\PickMeUp.Core.dll
 C:\Develop\PickMeUp_Server\PickMeUpCore\bin\Debug\net6.0\PickMeUp.Core.pdb
-C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.csproj.AssemblyReference.cache
 C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.AssemblyInfoInputs.cache
 C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.AssemblyInfo.cs
@@ -46,3 +45,4 @@ C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.dll
 C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\refint\PickMeUp.Core.dll
 C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.pdb
 C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\ref\PickMeUp.Core.dll
+C:\Develop\PickMeUp_Server\PickMeUpCore\obj\Debug\net6.0\PickMeUp.Core.sourcelink.json

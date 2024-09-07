@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PickMeUp.DTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d527b73bf001ea889a93b5af11c1d2234419b20c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PickMeUp.DTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PickMeUp.DTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

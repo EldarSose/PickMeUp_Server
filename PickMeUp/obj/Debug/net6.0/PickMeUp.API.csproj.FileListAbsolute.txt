@@ -360,10 +360,11 @@ C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.GeneratedMSBui
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.AssemblyInfoInputs.cache
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.AssemblyInfo.cs
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.csproj.CoreCompileInputs.cache
-C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.csproj.CopyComplete
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.dll
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\refint\PickMeUp.API.dll
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.pdb
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.genruntimeconfig.cache
 C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\ref\PickMeUp.API.dll
 C:\Develop\PickMeUp_Server\PickMeUp\bin\Debug\net6.0\appsettings.json
+C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.API.sourcelink.json
+C:\Develop\PickMeUp_Server\PickMeUp\obj\Debug\net6.0\PickMeUp.B5E01E4A.Up2Date

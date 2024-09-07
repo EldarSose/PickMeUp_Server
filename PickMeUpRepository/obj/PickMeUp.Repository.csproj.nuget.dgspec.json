@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj": {}
+    "C:\\Develop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj": {
+    "C:\\Develop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj",
+        "projectUniqueName": "C:\\Develop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj",
         "projectName": "PickMeUp.Core",
-        "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\obj\\",
+        "projectPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj",
+        "packagesPath": "C:\\Users\\Aida\\.nuget\\packages\\",
+        "outputPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -34,11 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -50,40 +60,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj": {
+    "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
+        "projectUniqueName": "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
         "projectName": "PickMeUp.DTO",
-        "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\obj\\",
+        "projectPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj",
+        "packagesPath": "C:\\Users\\Aida\\.nuget\\packages\\",
+        "outputPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,6 +91,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -103,6 +104,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -119,58 +125,49 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj": {
+    "C:\\Develop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj",
+        "projectUniqueName": "C:\\Develop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj",
         "projectName": "PickMeUp.Repository",
-        "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpRepository\\obj\\",
+        "projectPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpRepository\\PickMeUp.Repository.csproj",
+        "packagesPath": "C:\\Users\\Aida\\.nuget\\packages\\",
+        "outputPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpRepository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj": {
-                "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj"
+              "C:\\Develop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj": {
+                "projectPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpCore\\PickMeUp.Core.csproj"
               },
-              "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj": {
-                "projectPath": "C:\\Users\\PC\\Desktop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj"
+              "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj": {
+                "projectPath": "C:\\Develop\\PickMeUp_Server\\PickMeUpDTO\\PickMeUp.DTO.csproj"
               }
             }
           }
@@ -179,31 +176,36 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[8.0.8, )"
             }
           },
           "imports": [
@@ -217,26 +219,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.20, 6.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

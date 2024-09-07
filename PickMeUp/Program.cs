@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PickMeUp;
+using PickMeUp.Core.Entities;
 using PickMeUp.Repository;
 using PickMeUp.Repository.Interfaces;
 using PickMeUp.Repository.Repositories;
@@ -96,15 +97,39 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
 	var dataContext = scope.ServiceProvider.GetRequiredService<PickMeUpDbContext>();
-	dataContext.Database.EnsureCreated();
+	if(!dataContext.Database.EnsureCreated())
+	{ 
+		var conn = dataContext.Database.GetConnectionString();
+	
+		dataContext.Database.Migrate();
 
-	//new SetupService().Init(dataContext);
-	//new SetupService().InsertData(dataContext);
+
+        //new SetupService().InsertData(dataContext);
+	}
+    var g = new Gender
+    {
+        description = "M",
+        isDeleted = false
+    };
+
+    var gf = new Gender
+    {
+        description = "F",
+        isDeleted = false
+    };
+
+    dataContext.Genders.Add(g);
+
+    dataContext.Genders.Add(gf);
+
+    dataContext.SaveChanges();
 
 
-	var conn = dataContext.Database.GetConnectionString();
 
-	dataContext.Database.Migrate();
+    //new SetupService().Init(dataContext);
+
+
+
 }
 
 app.Run();

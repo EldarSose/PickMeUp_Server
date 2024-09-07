@@ -64,9 +64,10 @@ C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Reposito
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.AssemblyInfoInputs.cache
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.AssemblyInfo.cs
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.csproj.CoreCompileInputs.cache
-C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.csproj.CopyComplete
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.dll
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\refint\PickMeUp.Repository.dll
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.pdb
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.genruntimeconfig.cache
 C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\ref\PickMeUp.Repository.dll
+C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.Repository.sourcelink.json
+C:\Develop\PickMeUp_Server\PickMeUpRepository\obj\Debug\net6.0\PickMeUp.F95A5FAB.Up2Date

@@ -67,8 +67,9 @@ C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.Gen
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.AssemblyInfoInputs.cache
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.AssemblyInfo.cs
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.csproj.CoreCompileInputs.cache
-C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.csproj.CopyComplete
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.dll
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\refint\PickMeUp.Service.dll
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.pdb
 C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\ref\PickMeUp.Service.dll
+C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.Service.sourcelink.json
+C:\Develop\PickMeUp_Server\PickMeUpService\obj\Debug\net6.0\PickMeUp.069521E7.Up2Date
