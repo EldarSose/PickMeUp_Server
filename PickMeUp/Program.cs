@@ -33,11 +33,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var konekcijskiString = builder.Configuration.GetConnectionString("DefaultConnection");
+var konekcijskiString = builder.Configuration.GetConnectionString("PickMeUpDB");
 
-var optionsBuilder = builder.Services.AddDbContext<PickMeUpDbContext>(
+builder.Services.AddDbContext<PickMeUpDbContext>(
 	dbContextOpcije => dbContextOpcije
-	.UseSqlServer(konekcijskiString, b => b.MigrationsAssembly("PickMeUp.Repository")));
+	.UseSqlServer(konekcijskiString));
 
 //Repository
 builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
@@ -96,40 +96,9 @@ app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
-	var dataContext = scope.ServiceProvider.GetRequiredService<PickMeUpDbContext>();
-	if(!dataContext.Database.EnsureCreated())
-	{ 
-		var conn = dataContext.Database.GetConnectionString();
-	
-		dataContext.Database.Migrate();
+    var dbContext = scope.ServiceProvider.GetRequiredService<PickMeUpDbContext>();
 
-
-        //new SetupService().InsertData(dataContext);
-	}
-    var g = new Gender
-    {
-        description = "M",
-        isDeleted = false
-    };
-
-    var gf = new Gender
-    {
-        description = "F",
-        isDeleted = false
-    };
-
-    dataContext.Genders.Add(g);
-
-    dataContext.Genders.Add(gf);
-
-    dataContext.SaveChanges();
-
-
-
-    //new SetupService().Init(dataContext);
-
-
-
+    dbContext.Database.Migrate();
 }
 
 app.Run();
